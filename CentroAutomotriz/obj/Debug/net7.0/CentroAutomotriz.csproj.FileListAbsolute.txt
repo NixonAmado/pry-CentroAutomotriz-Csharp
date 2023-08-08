@@ -1,0 +1,30 @@
+/home/arteN01-051/Documents/nixon/C# -NP/CentroAutomotriz/CentroAutomotriz/bin/Debug/net7.0/CentroAutomotriz
+/home/arteN01-051/Documents/nixon/C# -NP/CentroAutomotriz/CentroAutomotriz/bin/Debug/net7.0/CentroAutomotriz.deps.json
+/home/arteN01-051/Documents/nixon/C# -NP/CentroAutomotriz/CentroAutomotriz/bin/Debug/net7.0/CentroAutomotriz.runtimeconfig.json
+/home/arteN01-051/Documents/nixon/C# -NP/CentroAutomotriz/CentroAutomotriz/bin/Debug/net7.0/CentroAutomotriz.dll
+/home/arteN01-051/Documents/nixon/C# -NP/CentroAutomotriz/CentroAutomotriz/bin/Debug/net7.0/CentroAutomotriz.pdb
+/home/arteN01-051/Documents/nixon/C# -NP/CentroAutomotriz/CentroAutomotriz/obj/Debug/net7.0/CentroAutomotriz.csproj.AssemblyReference.cache
+/home/arteN01-051/Documents/nixon/C# -NP/CentroAutomotriz/CentroAutomotriz/obj/Debug/net7.0/CentroAutomotriz.GeneratedMSBuildEditorConfig.editorconfig
+/home/arteN01-051/Documents/nixon/C# -NP/CentroAutomotriz/CentroAutomotriz/obj/Debug/net7.0/CentroAutomotriz.AssemblyInfoInputs.cache
+/home/arteN01-051/Documents/nixon/C# -NP/CentroAutomotriz/CentroAutomotriz/obj/Debug/net7.0/CentroAutomotriz.AssemblyInfo.cs
+/home/arteN01-051/Documents/nixon/C# -NP/CentroAutomotriz/CentroAutomotriz/obj/Debug/net7.0/CentroAutomotriz.csproj.CoreCompileInputs.cache
+/home/arteN01-051/Documents/nixon/C# -NP/CentroAutomotriz/CentroAutomotriz/obj/Debug/net7.0/CentroAutomotriz.dll
+/home/arteN01-051/Documents/nixon/C# -NP/CentroAutomotriz/CentroAutomotriz/obj/Debug/net7.0/refint/CentroAutomotriz.dll
+/home/arteN01-051/Documents/nixon/C# -NP/CentroAutomotriz/CentroAutomotriz/obj/Debug/net7.0/CentroAutomotriz.pdb
+/home/arteN01-051/Documents/nixon/C# -NP/CentroAutomotriz/CentroAutomotriz/obj/Debug/net7.0/CentroAutomotriz.genruntimeconfig.cache
+/home/arteN01-051/Documents/nixon/C# -NP/CentroAutomotriz/CentroAutomotriz/obj/Debug/net7.0/ref/CentroAutomotriz.dll
+C:\Users\paula\Documents\nixon\CentroAutomotriz\obj\Debug\net7.0\CentroAutomotriz.csproj.AssemblyReference.cache
+C:\Users\paula\Documents\nixon\CentroAutomotriz\obj\Debug\net7.0\CentroAutomotriz.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\paula\Documents\nixon\CentroAutomotriz\obj\Debug\net7.0\CentroAutomotriz.AssemblyInfoInputs.cache
+C:\Users\paula\Documents\nixon\CentroAutomotriz\obj\Debug\net7.0\CentroAutomotriz.AssemblyInfo.cs
+C:\Users\paula\Documents\nixon\CentroAutomotriz\obj\Debug\net7.0\CentroAutomotriz.csproj.CoreCompileInputs.cache
+C:\Users\paula\Documents\nixon\CentroAutomotriz\obj\Debug\net7.0\CentroAutomotriz.dll
+C:\Users\paula\Documents\nixon\CentroAutomotriz\obj\Debug\net7.0\refint\CentroAutomotriz.dll
+C:\Users\paula\Documents\nixon\CentroAutomotriz\obj\Debug\net7.0\CentroAutomotriz.pdb
+C:\Users\paula\Documents\nixon\CentroAutomotriz\bin\Debug\net7.0\CentroAutomotriz.exe
+C:\Users\paula\Documents\nixon\CentroAutomotriz\bin\Debug\net7.0\CentroAutomotriz.deps.json
+C:\Users\paula\Documents\nixon\CentroAutomotriz\bin\Debug\net7.0\CentroAutomotriz.runtimeconfig.json
+C:\Users\paula\Documents\nixon\CentroAutomotriz\bin\Debug\net7.0\CentroAutomotriz.dll
+C:\Users\paula\Documents\nixon\CentroAutomotriz\bin\Debug\net7.0\CentroAutomotriz.pdb
+C:\Users\paula\Documents\nixon\CentroAutomotriz\obj\Debug\net7.0\CentroAutomotriz.genruntimeconfig.cache
+C:\Users\paula\Documents\nixon\CentroAutomotriz\obj\Debug\net7.0\ref\CentroAutomotriz.dll
