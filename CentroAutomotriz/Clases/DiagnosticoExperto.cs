@@ -26,13 +26,13 @@ class DiagnosticoExperto
 
         public void AñadirDiagnostico(List <DiagnosticoExperto> DiagnosticosExperto)
         {
-            Console.WriteLine("Ingrese la cedula: ");
+            Console.Write("\tIngrese la cedula: ");
             string ccEmpleadoDiagnostico = Console.ReadLine(); 
-            Console.WriteLine("Ingresar nombre del empleado: ");
+            Console.Write("\tIngresar nombre del empleado: ");
             string nombreEmpleadoDiagnostico = Console.ReadLine(); 
-            Console.WriteLine("Ingrese su diagnostico: ");   
+            Console.Write("\tIngrese su diagnostico");   
             string diagnosticoEmpleado = Console.ReadLine();
-            DiagnosticoExperto nuevoDiagnostico = new DiagnosticoExperto(ccEmpleadoDiagnostico, diagnosticoEmpleado,nombreEmpleadoDiagnostico);
+            DiagnosticoExperto nuevoDiagnostico = new DiagnosticoExperto(diagnosticoEmpleado,ccEmpleadoDiagnostico,nombreEmpleadoDiagnostico);
             DiagnosticosExperto.Add(nuevoDiagnostico);
 
             }

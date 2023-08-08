@@ -9,8 +9,15 @@ public class ClassMenuPrincipal
     public int VerMenuPrincipal()
     {
         Console.Clear();
-        Console.WriteLine("1. Ingresar a la administracion del centro automotriz");
-        Console.WriteLine("2. Ingresar al taller");
+        Console.WriteLine("********************************************************");
+        Console.WriteLine("                   MENU CENTRO AUTOMOTRIZ               ");     
+        Console.WriteLine("********************************************************");
+        Console.WriteLine("\t1. Ingresar a la administracion");
+        Console.WriteLine("\t2. Ingresar al taller");
+        Console.WriteLine("\t3. Salir del programa");
+        Console.WriteLine("********************************************************");
+        Console.Write("Ingresar una opcion: ");
+
         if(!int.TryParse(Console.ReadLine(),out int opMenuPrincipal))
         {
             Console.WriteLine("Por favor ingresar una opcion valida");

@@ -11,7 +11,7 @@ class Vehiculo
         public string Placa
         {
             get { return placa.ToUpper(); }
-            set { placa = value; }
+            set { placa = value.ToUpper(); }
         }
         
         public string modelo {get;set;}
@@ -19,52 +19,57 @@ class Vehiculo
         public string color {get;set;}
 
         public int km {get;set;}
-        public int cantidad {get;set;}
 
-        public Vehiculo(string placa, string modelo, string marca,string color, int km, int cantidad)
+
+        public Vehiculo(string placa, string modelo, string marca, string color, int km)
         {
             this.placa = placa;               
             this.modelo = modelo;           
             this.marca = marca;      
             this.km = km;               
-            this.cantidad = cantidad;
+
         }
         public Vehiculo(){}
         public void RegistrarVehiculo(List <Cliente> Clientes )
-        {        
+        {   
+            Console.Clear();
+            Console.WriteLine("********************************************************");
+            Console.WriteLine("                   Registrar Vehiculo");
+            Console.WriteLine("********************************************************");
             Cliente cliente = new Cliente(); 
             cliente.listarClientes(Clientes);
-            Console.WriteLine("Ingrese el Id propietario del vehiculo");
+            Console.Write("\tIngrese el Id propietario del vehiculo: ");
             string propietarioVehiculoId =Console.ReadLine();
-
-            Console.WriteLine("\tRegistrar Carro");  
-            Console.Write("Ingresar la placa: ");
+            Console.Write("\tIngresar la placa: ");
             string carroPlaca = Console.ReadLine();
-            Console.Write("Ingresar modelo: ");
+            Console.Write("\tIngresar modelo: ");
             string carroModelo = Console.ReadLine();
-            Console.Write("Ingresar marca: ");
+            Console.Write("\tIngresar marca: ");
             string carroMarca = Console.ReadLine();
-            Console.Write("Ingresar color: ");
+            Console.Write("\tIngresar color: ");
             string carroColor = Console.ReadLine();
-            Console.Write("Ingresar km: ");
+            Console.Write("\tIngresar km: ");
              int carroKm = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Ingresar cantidad: ");
-            int carroCantidad = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Ingresar el diagnostico del cliente");
+            Console.WriteLine("\tIngresar el diagnostico del cliente\n\t>");
             string diagnosticoCliente = Console.ReadLine();
+            Console.WriteLine("********************************************************");
 
-
-            Vehiculo nuevoVehiculo = new Vehiculo(carroPlaca,carroModelo,carroMarca,carroColor,carroKm,carroCantidad);
-
+            Vehiculo nuevoVehiculo = new Vehiculo(carroPlaca,carroModelo,carroMarca,carroColor,carroKm);
             Cliente clienteSeleccionado = Clientes.Find(e => e.cc == propietarioVehiculoId );
             clienteSeleccionado.diagnostico = diagnosticoCliente;
             clienteSeleccionado.Vehiculos.Add(nuevoVehiculo);
+            Console.WriteLine("Se ha registrado exitosamente");
+            Console.ReadKey();
+            
         
         
         }
         public void listarVehiculos( List <Vehiculo> Vehiculos)
         {
-            Console.WriteLine("Vehiculo/s vinculado/s al cliente");
+            Console.WriteLine("********************************************************");
+            Console.WriteLine("          Vehiculo/s Vinculado/s Al Cliente");
+            Console.WriteLine("********************************************************");
+
             Console.WriteLine("\tPlaca\tModelo");
             foreach (var vehiculo in Vehiculos)
             {
@@ -75,7 +80,7 @@ class Vehiculo
            public Vehiculo buscarVehiculo(List <Vehiculo> Vehiculos)
         {
             listarVehiculos(Vehiculos);
-            Console.WriteLine("ingrese la placa del vehiculo: ");
+            Console.WriteLine("Ingrese la placa del vehiculo: ");            
             string placaIngresada = Console.ReadLine();
             return Vehiculos.Find(e => e.Placa == placaIngresada );  
         }

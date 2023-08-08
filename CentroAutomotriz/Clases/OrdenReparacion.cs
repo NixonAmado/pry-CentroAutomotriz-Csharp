@@ -39,25 +39,19 @@ class OrdenReparacion
 
         public void registrarOrdenReparacion(List <OrdenReparacion> OrdenesReparacion)
         {
-            Console.WriteLine("Crear Orden Reparacion");   
+            Console.Clear();
+            Console.WriteLine("********************************************************");
+            Console.WriteLine("             Registrar Orden Reparacion");
+            Console.WriteLine("********************************************************"); 
             Console.WriteLine("Ingrese el numero de orden: ");
             int ordenRegistroNro = Convert.ToInt32(Console.ReadLine());
-            
-            Console.WriteLine("---Fecha de Orden---");
-            Console.Write("DIA: ");
-            int ordenReparacionFrDia = Convert.ToInt32(Console.ReadLine());
-            Console.Write("MES: ");
-            int ordenReparacionFrMes = Convert.ToInt32(Console.ReadLine());
-            Console.Write("ANIO: ");
-            int ordenReparacionFrAnio = Convert.ToInt32(Console.ReadLine());
-            DateTime ordenReparacionFr = new DateTime(ordenReparacionFrAnio,ordenReparacionFrMes,ordenReparacionFrDia);
-            Console.WriteLine("-------------------- ");
-            
-
-        
+            DateTime ordenReparacionFr = DateTime.Today;
+            Console.WriteLine("********************************************************"); 
 
             OrdenReparacion nuevaOrdenReparacion = new OrdenReparacion(ordenRegistroNro,ordenReparacionFr,"pendiente");
             OrdenesReparacion.Add(nuevaOrdenReparacion);  
+            Console.WriteLine("Se ha registrado con exito");
+            Console.ReadKey();
         }
     
         public void ListarOrdenReparacion(OrdenReparacion ordenReparacion){
@@ -70,9 +64,9 @@ class OrdenReparacion
 
             // Encabezado de la tabla
             tabla.AppendLine ("".PadRight(tablaAncho - 20, '_'));
-            tabla.AppendLine ("".PadRight(tablaAncho - 20) + $"nroOrden: {ordenReparacion.nroOrden}"  +
-            "".PadRight(tablaAncho - 20 * 6) + $"fecha: {ordenReparacion.fecha}");
-            tabla.AppendLine ("".PadRight(tablaAncho - 20) + $"estado: {ordenReparacion.estado}" );
+            tabla.AppendLine ($"nroOrden: {ordenReparacion.nroOrden}");
+            tabla.AppendLine ($"fecha: {ordenReparacion.fecha}");            
+            tabla.AppendLine ($"estado: {ordenReparacion.estado}" );
             tabla.AppendLine ("".PadRight(tablaAncho - 20, '_'));
             tabla.AppendLine ("".PadRight((tablaAncho / 2) - 15) + "DETALLES DE APROBACION");
             tabla.AppendLine ("".PadRight(tablaAncho -20 , '_'));
@@ -93,8 +87,8 @@ class OrdenReparacion
             foreach (var repuesto in detalleAprobacion)
             {
 	        tabla.AppendLine (
-			    $"\t{repuesto.id}".PadRight (columnaAncho - 10) +
-			    $"{repuesto.nombreRepuesto}".PadRight (columnaAncho) +
+			    $"{repuesto.id}".PadRight (columnaAncho - 10) +
+			    $"\t{repuesto.nombreRepuesto}".PadRight (columnaAncho) +
 			    $"{repuesto.valorUnit}".PadRight (columnaAncho) +
 			    $"{repuesto.cantidad}".PadRight (columnaAncho) +
 			    $"{repuesto.valorTotal}".PadRight (columnaAncho) +
@@ -115,13 +109,14 @@ class OrdenReparacion
             
             if (OrdenesReparacion.Count != 0)
             {
-                Console.WriteLine("\tOrdenes de Reparacion");
-                Console.WriteLine("numero de orden");
+                Console.WriteLine("********************************************************");
+                Console.WriteLine("                    Ordenes De Registro");
+                Console.WriteLine("********************************************************");
+                Console.WriteLine("numero de orden registro");
                 foreach (var orden in OrdenesReparacion)
                 {
                     Console.WriteLine("\t" + orden.nroOrden);
                 }
-                Console.WriteLine("<Press any key to continue>");
                 Console.ReadKey();
                 return true;
             
@@ -140,7 +135,6 @@ class OrdenReparacion
                 if(!int.TryParse(Console.ReadLine(), out int opcion))
                 {
                     Console.WriteLine("El valor ingresado es invalido");
-                    Console.WriteLine("<Press any key to continue>");
                     Console.ReadKey();
                 }
                 return OrdenesReparacion.Find(e => e.nroOrden == opcion); 

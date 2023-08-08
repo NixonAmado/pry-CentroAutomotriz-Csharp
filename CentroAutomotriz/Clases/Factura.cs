@@ -37,15 +37,7 @@ class Factura
             Console.WriteLine("Generar Factura");   
             Console.WriteLine("Ingrese el numero de Factura: ");
             int facturaNro = Convert.ToInt32(Console.ReadLine());
-            
-            Console.WriteLine("---Fecha de Factura---");
-            Console.Write("DIA: ");
-            int FacturaFrDia = Convert.ToInt32(Console.ReadLine());
-            Console.Write("MES: ");
-            int FacturaFrMes = Convert.ToInt32(Console.ReadLine());
-            Console.Write("ANIO: ");
-            int FacturaFrAnio = Convert.ToInt32(Console.ReadLine());
-            DateTime FacturaFr = new DateTime(FacturaFrAnio,FacturaFrMes,FacturaFrDia);
+            DateTime FacturaFr = DateTime.Today;
 
             Factura nuevaFactura = new Factura(facturaNro,FacturaFr,ordenServicioSeleccionado);
             moviCentro.Facturas.Add(nuevaFactura);
@@ -132,6 +124,7 @@ class Factura
                 
                 
             Console.WriteLine(tabla.ToString ());
+            Console.ReadKey();
 
 
                 

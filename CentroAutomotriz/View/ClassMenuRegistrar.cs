@@ -9,12 +9,17 @@ public class ClassMenuRegistrar
     public int VerMenuRegistrar()
     {
         Console.Clear();
-        Console.WriteLine("1. Registrar clientes");
-        Console.WriteLine("2. Registrar Vehiculos");
-        Console.WriteLine("3. Registrar Empleados");
-        Console.WriteLine("4. Registrar Orden de servicio");
-        Console.WriteLine("5. Ver orden de servicio");
-        Console.WriteLine("6. Regresar al menu principal");
+        Console.WriteLine("********************************************************");
+        Console.WriteLine("                   MENU ADMINISTRACION                  ");     
+        Console.WriteLine("********************************************************");
+        Console.WriteLine("\t1. Registrar clientes");
+        Console.WriteLine("\t2. Registrar Vehiculos");
+        Console.WriteLine("\t3. Registrar Empleados");
+        Console.WriteLine("\t4. Registrar Orden de servicio");
+        Console.WriteLine("\t5. Ver orden de servicio");
+        Console.WriteLine("\t6. Regresar al menu principal");
+        Console.WriteLine("********************************************************");
+        Console.Write("Ingresar una opcion: ");
 
         if(!int.TryParse(Console.ReadLine(),out int opMenuPrincipal))
         {

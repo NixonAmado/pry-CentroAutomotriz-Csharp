@@ -10,7 +10,6 @@ namespace CentroAutomotriz.Clases;
         public string Email { get; set; }
 
         public DateTime FechaRegistro { get; set; }
-        //falta poner el diagnostico del cliente
 
         private List<Vehiculo> vehiculos = new List<Vehiculo>();
         public List<Vehiculo> Vehiculos
@@ -23,7 +22,7 @@ namespace CentroAutomotriz.Clases;
             : base(cc, nombre, apellido, numeroCelular,diagnostico)
         {
             Email = email;
-            FechaRegistro = fechaRegistro;
+            FechaRegistro = fechaRegistro;// DateTime.Today;
         }
         public Cliente() : base("", "", "", "","")
         {
@@ -31,40 +30,37 @@ namespace CentroAutomotriz.Clases;
             FechaRegistro = new DateTime();
         }
         public void RegistrarCliente(List<Cliente> Clientes )
-        {        
-            Console.WriteLine("\tRegistrar Cliente");  
-            Console.Write("Ingresar numero de cedula: ");
+        {    
+            Console.Clear();    
+            Console.WriteLine("********************************************************");
+            Console.WriteLine("                   Registrar Cliente");
+            Console.WriteLine("********************************************************");
+            Console.Write("\tIngresar numero de cedula: ");
             string clienteCc = Console.ReadLine();
-            Console.Write("Ingresar nombre: ");
+            Console.Write("\tIngresar nombre: ");
             string clienteNombre = Console.ReadLine();
-            Console.Write("Ingresar apellido: ");
+            Console.Write("\tIngresar apellido: ");
             string clienteApellido = Console.ReadLine();
-            Console.Write("Ingresar numero de celular: ");
+            Console.Write("\tIngresar numero de celular: ");
             string clienteNumCelular = Console.ReadLine();
-            Console.Write("Ingresar Email: ");
+            Console.Write("\tIngresar Email: ");
             string clienteEmail = Console.ReadLine();
-            
-            Console.WriteLine("---Fecha de registro---");
-            Console.Write("DIA: ");
-            int clienteFrDia = Convert.ToInt32(Console.ReadLine());
-            Console.Write("MES: ");
-            int clienteFrMes = Convert.ToInt32(Console.ReadLine());
-            Console.Write("ANIO: ");
-            int clienteFrAnio = Convert.ToInt32(Console.ReadLine());
-            DateTime clienteFr = new DateTime(clienteFrAnio,clienteFrMes,clienteFrDia);
-            Console.WriteLine("-------------------- ");
+            DateTime clienteFr = DateTime.Today;
+            Console.WriteLine("********************************************************");
+
         //public Cliente(string cc, string nombre, string apellido, string numeroCelular, string email, DateTime fechaRegistro)
             Cliente nuevoCliente = new Cliente(clienteCc,clienteNombre,clienteApellido,clienteNumCelular,clienteEmail,clienteFr,"");
             Clientes.Add(nuevoCliente);
-        
+            Console.WriteLine("Se ha registrado exitosamente");
+            Console.ReadKey();
         }
 
         public void listarClientes(List<Cliente> Clientes)
         {
-            Console.WriteLine("\tId\tNombre");
+            Console.WriteLine("\n\tId\t\tNombre");
             foreach (var cliente in Clientes)
             {
-                Console.WriteLine($"\t{cliente.cc}\t{cliente.nombre}");
+                Console.WriteLine($"\t{cliente.cc}\t\t{cliente.nombre}");
             }
 
         }

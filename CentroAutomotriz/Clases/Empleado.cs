@@ -25,8 +25,11 @@ namespace CentroAutomotriz.Clases;
             this.especialidad = especialidad;
         }
  public void RegistrarEmpleado(List<Empleado> Empleados )
-        {        
-            Console.WriteLine("\tRegistrar Empleado");  
+        {    
+            Console.Clear();    
+            Console.WriteLine("********************************************************");
+            Console.WriteLine("                   Registrar Empleado");
+            Console.WriteLine("********************************************************");  
             Console.Write("Ingresar numero de cedula: ");
             string empleadoCc = Console.ReadLine();
             Console.Write("Ingresar nombre: ");
@@ -39,30 +42,34 @@ namespace CentroAutomotriz.Clases;
             string empleadoEmail = Console.ReadLine();
             Console.Write("Ingresar especialidad: ");
             string empleadoEspecialidad = Console.ReadLine();
-        
-
-
+            Console.WriteLine("********************************************************");
 
             Empleado nuevoEmpleado = new Empleado(empleadoCc,empleadoNombre,empleadoApellido,empleadoNumCelular,empleadoEmail,empleadoEspecialidad,"");
             Empleados.Add(nuevoEmpleado);
+            Console.WriteLine("Se ha registrado exitosamente");
+            Console.ReadKey();
             
         }
-        public void listarClientes(List<Cliente> Clientes)
-        {
-            foreach (var cliente in Clientes)
-            {
-            }
 
-        }
+        
         public void listarEmpleados(List<Empleado> Empleados)
         {
-            Console.WriteLine("\tId\tNombre\tEspecialidad");
+            Console.WriteLine("\n\tId\tNombre\tEspecialidad");
             foreach (var empleado in Empleados)
             {
                 Console.WriteLine($"\t{empleado.cc}\t{empleado.nombre}\t{empleado.Especialidad}");
 
             }
         }
+
+            public Empleado buscarEmpleado(List<Empleado> Empleados)
+        {
+            listarEmpleados(Empleados);
+            Console.WriteLine("\ningrese la cedula del Empleado que va a hacer la solicitud: ");
+            string ccIngresada = Console.ReadLine();
+            return Empleados.Find(e => e.cc == ccIngresada );  
+        }
+
         public bool validarJefeCompras(List <Empleado> Empleados)
         {   //valida si hay empleados registrados
             if(Empleados.Count != 0)
@@ -81,15 +88,18 @@ namespace CentroAutomotriz.Clases;
                     else
                     {
                         Console.WriteLine("El id del jefe de compras no coincide con el id");
+                        Console.ReadKey();
                         return false;
                     }
 
                 }else{
                     Console.WriteLine("No hay ningun empleado con especialidad de jefe de compras, asegurate de haberlo registrado primero");
+                    Console.ReadKey();
                     return false;
                 }
             }else{
                 Console.WriteLine("No hay ningun emplado registrado, asegurate de haberlo registrado primero");
+                Console.ReadKey();
                 return false;
             }
 

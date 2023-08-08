@@ -87,43 +87,67 @@ namespace MiProyecto
                                     }
                                     break;
                                 case 2:
-                                    OrdenServicio ordenServicioReparacion = new OrdenServicio();
-                                    OrdenServicio ordenServicioRepaSeleccionado = ordenServicioReparacion.buscarOrdenServicio(moviCentro.OrdenesServicio);
-                                    if (ordenServicioRepaSeleccionado != null)
+                                    ClassMenuOrdenReparacion menuOrdenReparacion = new ClassMenuOrdenReparacion();
+                                    int opMenuReparacion = 0;                                
+                                    do
                                     {
-                                        OrdenReparacion ordenReparacion = new OrdenReparacion();
-                                        ordenReparacion.registrarOrdenReparacion(ordenServicioRepaSeleccionado.OrdenesReparacion);
+                                        opMenuReparacion = menuOrdenReparacion.VerMenuOrdenReparacion();
+                                        switch (opMenuReparacion)
+                                        {
+                                            case 0:
+                                                continue;
+                                            case 1:
+                                                OrdenServicio ordenServicioReparacion = new OrdenServicio();
+                                                OrdenServicio ordenServicioRepaSeleccionado = ordenServicioReparacion.buscarOrdenServicio(moviCentro.OrdenesServicio);
+                                                if (ordenServicioRepaSeleccionado != null)
+                                                {
+                                                    OrdenReparacion ordenReparacion = new OrdenReparacion();
+                                                    ordenReparacion.registrarOrdenReparacion(ordenServicioRepaSeleccionado.OrdenesReparacion);
+                                                }
+                                                else
+                                                {
+                                                    Console.WriteLine("No exite ninguna Orden de servicio, asegurate de haberla creado primero");
+                                                    Console.ReadKey();
+                                                }
+                                                break;
+                                            case 2:
+                                                Empleado empleado = new Empleado();
+                                                Empleado empleadoSolicitante = empleado.buscarEmpleado(moviCentro.Empleados);
+                                                OrdenServicio ordenServicioRepuesto = new OrdenServicio();
+                                                OrdenServicio ordenServicioRepSeleccionado = ordenServicioRepuesto.buscarOrdenServicio(moviCentro.OrdenesServicio);
+                                                if (ordenServicioRepSeleccionado != null)
+                                                {
+                                                    OrdenReparacion ordenReparacionRepuesto = new OrdenReparacion();
+                                                    OrdenReparacion ordenReparaRepuestoSeleccionado = ordenReparacionRepuesto.buscarOrdenReparacion(ordenServicioRepSeleccionado.OrdenesReparacion);
+                                                    if (ordenReparaRepuestoSeleccionado != null)
+                                                    {
+                                                        Repuesto repuesto = new Repuesto();
+                                                        repuesto.AñadirRepuesto(ordenReparaRepuestoSeleccionado.DetalleAprobacion,empleadoSolicitante);
+                                                    }
+                                                    else
+                                                    {
+                                                        Console.WriteLine("No exite ninguna Orden de reparacion, asegurate de haberla creado primero");
+                                                        Console.ReadKey();
+
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    Console.WriteLine("No exite ninguna Orden de servicio, asegurate de haberla creado primero");
+                                                    Console.ReadKey();
+                                                }
+                                                break;
+                                            default:
+                                            break;
+                                        }
                                     }
-                                    else
-                                    {
-                                        Console.WriteLine("No exite ninguna Orden de servicio, asegurate de haberla creado primero");
-                                        Console.ReadKey();
-                                    }
+                                    
+                                    while (opMenuReparacion != 3);
                                     break;
+                               
+                                   
+                                    
                                 case 3:
-                                    OrdenServicio ordenServicioRepuesto = new OrdenServicio();
-                                    OrdenServicio ordenServicioRepSeleccionado = ordenServicioRepuesto.buscarOrdenServicio(moviCentro.OrdenesServicio);
-                                    if (ordenServicioRepSeleccionado != null)
-                                    {
-                                        OrdenReparacion ordenReparacionRepuesto = new OrdenReparacion();
-                                        OrdenReparacion ordenReparaRepuestoSeleccionado = ordenReparacionRepuesto.buscarOrdenReparacion(ordenServicioRepSeleccionado.OrdenesReparacion);
-                                        if (ordenServicioRepSeleccionado != null)
-                                        {
-                                            Repuesto repuesto = new Repuesto();
-                                            repuesto.AñadirRepuesto(ordenReparaRepuestoSeleccionado.DetalleAprobacion);
-                                        }
-                                        else
-                                        {
-                                            Console.WriteLine("No exite ninguna Orden de reparacion, asegurate de haberla creado primero");
-                                        }
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("No exite ninguna Orden de servicio, asegurate de haberla creado primero");
-                                        Console.ReadKey();
-                                    }
-                                    break;
-                                case 4:
                                     Empleado jefeCompras = new Empleado();
                                     if (jefeCompras.validarJefeCompras(moviCentro.Empleados))
                                     {
@@ -151,7 +175,9 @@ namespace MiProyecto
                                             else
                                             {
                                                 Console.WriteLine("No exite ninguna Orden de reparacion, asegurate de haberla creado primero");
+                                                Console.ReadKey();
                                             }
+
                                         }
                                         else
                                         {
@@ -160,7 +186,7 @@ namespace MiProyecto
                                         }
                                     }
                                     break;
-                                case 5:
+                                case 4:
                                     OrdenServicio ordenServicioFactura = new OrdenServicio();
                                     OrdenServicio ordenServicioFacturaSeleccionado = ordenServicioFactura.buscarOrdenServicio(moviCentro.OrdenesServicio);
                                     if (ordenServicioFacturaSeleccionado != null)
@@ -173,25 +199,29 @@ namespace MiProyecto
                                             {
                                                 Console.WriteLine($"La orden Nro {ordenReparacion.nroOrden} no ha sido revisada todavía, asegúrate de revisar todas las órdenes de reparación antes de continuar");
                                                 ordenesReparacionPendientes.Add(ordenReparacion);
+                                                Console.ReadKey();
                                             }
                                         }
+                                        
                                         if (ordenesReparacionPendientes.Count != 0)
                                         {
                                             Factura factura = new Factura();
                                             Factura facturaRegistrada = factura.RegistrarFactura(ordenServicioFacturaSeleccionado, moviCentro);
                                             factura.ListarFactura(ordenServicioFacturaSeleccionado, moviCentro, facturaRegistrada);
+
                                         }
                                     }
                                     else
                                     {
                                         Console.WriteLine("No existe ninguna Orden de servicio, asegúrate de haberla creado primero");
+                                        Console.ReadKey();
                                     }
                                     break;
                             }
-                        } while (opMenuTaller != 6);
+                        } while (opMenuTaller != 5);
                         break;
                 }
-            } while (opMenuPrincipal != 6);
+            } while (opMenuPrincipal != 3);
         }
     }
 }

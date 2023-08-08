@@ -13,7 +13,7 @@ class Repuesto
         public int cantidad {get;set;}
         public int valorTotal {get;set;}
         public string calidad {get;set;}// original - generico;
-        public string nombreEmpleado {get;set;}
+        public Empleado nombreEmpleado {get;set;}
         public string porQueLoSolicita {get;set;}
         private string estado = "pendiente"; // aprovado - desaprobado;
         public string Estado
@@ -33,7 +33,7 @@ class Repuesto
             this.porQueLoSolicita = porQueLoSolicita;
         }
         
-        public Repuesto(int id, string nombreRepuesto,int valorUnit, int cantidad,int valorTotal,string calidad,string nombreEmpleado, string porQueLoSolicita)
+        public Repuesto(int id, string nombreRepuesto,int valorUnit, int cantidad,int valorTotal,string calidad,Empleado nombreEmpleado, string porQueLoSolicita)
         {
             this.id = id;               
             this.nombreRepuesto = nombreRepuesto;               
@@ -45,7 +45,7 @@ class Repuesto
             this.porQueLoSolicita = porQueLoSolicita;
         }
 
-        public void AñadirRepuesto(List <Repuesto> DetalleAprobacion)
+        public void AñadirRepuesto(List <Repuesto> DetalleAprobacion,Empleado empleadoSolicitante)
         {
             Console.WriteLine("\tSolicitar repuesto");  
             Console.Write("Ingresar id: ");
@@ -59,14 +59,12 @@ class Repuesto
             int repuestoValTotal = repuestoValUnit * repuestoCantidad;       
             Console.Write("Ingresar calidad ej(generico): ");
             string repuestoCalidad = Console.ReadLine();
-            Console.Write("Ingresar nombre empleado: ");
-            string repuestoNombreEmpleado = Console.ReadLine();
             Console.Write("Por que lo solicita: ");
             string porQueLoSolicita =Console.ReadLine();
             Console.WriteLine("El repuesto ha sido solicitado con exito");
             Console.ReadKey();
 
-            Repuesto nuevoRepuesto = new Repuesto(repuestoId,repuestoNombre,repuestoValUnit,repuestoCantidad,repuestoValTotal,repuestoCalidad,repuestoNombreEmpleado,porQueLoSolicita);
+            Repuesto nuevoRepuesto = new Repuesto(repuestoId,repuestoNombre,repuestoValUnit,repuestoCantidad,repuestoValTotal,repuestoCalidad,empleadoSolicitante,porQueLoSolicita);
             DetalleAprobacion.Add(nuevoRepuesto);
         }
 
@@ -79,7 +77,7 @@ class Repuesto
                 repuesto.Estado = estado;
             }
             Console.WriteLine("Se ha actualizado el estado del repuesto exitosamente");
-            Console.WriteLine("<Press any key to continue>");
+            Console.ReadKey();
 
       
         }

@@ -2,30 +2,29 @@ using System;
 
 namespace CentroAutomotriz.View;
 
-public class ClassMenuTaller
+public class ClassMenuOrdenReparacion
 {
-    public ClassMenuTaller(){}
+    public ClassMenuOrdenReparacion(){}
 
-    public int VerMenuTaller()
+    public int VerMenuOrdenReparacion()
     {
         Console.Clear();
         Console.WriteLine("********************************************************");
-        Console.WriteLine("                      MENU TALLER                       ");     
+        Console.WriteLine("                   MENU ORDEN REPARACION                ");     
         Console.WriteLine("********************************************************");
-        Console.WriteLine("1. Dar diagnostico");
-        Console.WriteLine("2. Orden de reparacion");
-        Console.WriteLine("3. Autorizar Orden de reparacion");
-        Console.WriteLine("4. Entregar vehiculo");
-        Console.WriteLine("5. Regresar al menu principal");
+        Console.WriteLine("\t1. Registrar Orden de aprobacion de reparacion");
+        Console.WriteLine("\t2. Solicitar Repuesto");
+        Console.WriteLine("\t3. Regresar");
         Console.WriteLine("********************************************************");
         Console.Write("Ingresar una opcion: ");
-        if(!int.TryParse(Console.ReadLine(),out int opMenuTaller))
+        
+        if(!int.TryParse(Console.ReadLine(),out int opMenuReparacion))
         {
             Console.WriteLine("Por favor ingresar una opcion valida");
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
             return 0;
         }
-        return opMenuTaller;
+        return opMenuReparacion;
     }
 }

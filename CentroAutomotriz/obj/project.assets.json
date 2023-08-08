@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\paula\\.nuget\\packages\\": {}
+    "/home/arteN01-051/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\paula\\Documents\\nixon\\CentroAutomotriz\\CentroAutomotriz.csproj",
+      "projectUniqueName": "/home/arteN01-051/Documents/nixon/C# -NP/pry-CentroAutomotriz-Csharp/CentroAutomotriz/CentroAutomotriz.csproj",
       "projectName": "CentroAutomotriz",
-      "projectPath": "C:\\Users\\paula\\Documents\\nixon\\CentroAutomotriz\\CentroAutomotriz.csproj",
-      "packagesPath": "C:\\Users\\paula\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\paula\\Documents\\nixon\\CentroAutomotriz\\obj\\",
+      "projectPath": "/home/arteN01-051/Documents/nixon/C# -NP/pry-CentroAutomotriz-Csharp/CentroAutomotriz/CentroAutomotriz.csproj",
+      "packagesPath": "/home/arteN01-051/.nuget/packages/",
+      "outputPath": "/home/arteN01-051/Documents/nixon/C# -NP/pry-CentroAutomotriz-Csharp/CentroAutomotriz/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\paula\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/arteN01-051/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.109/RuntimeIdentifierGraph.json"
       }
     }
   }
