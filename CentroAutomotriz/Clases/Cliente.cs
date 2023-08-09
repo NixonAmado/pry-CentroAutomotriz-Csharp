@@ -76,10 +76,15 @@ namespace CentroAutomotriz.Clases;
         }
         public Cliente buscarCliente(List<Cliente> Clientes)
         {
-            listarClientes(Clientes);
+            if(listarClientes(Clientes)){
             Console.WriteLine("ingrese la cedula del cliente: ");
             string ccIngresada = Console.ReadLine();
             return Clientes.Find(e => e.cc == ccIngresada );  
+            }
+            else{
+                Console.WriteLine("No se ha encontardo ningun cliente, asegurate de haberlo creado primero");
+                Console.ReadKey();
+                return null;}
         }
 
     }

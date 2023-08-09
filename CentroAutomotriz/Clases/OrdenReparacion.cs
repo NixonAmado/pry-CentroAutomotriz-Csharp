@@ -93,7 +93,7 @@ class OrdenReparacion
 			    $"{repuesto.cantidad}".PadRight (columnaAncho) +
 			    $"{repuesto.valorTotal}".PadRight (columnaAncho) +
 			    $"{repuesto.calidad}".PadRight (columnaAncho) +
-			    $"{repuesto.nombreEmpleado}".PadRight (columnaAncho) +
+			    $"{repuesto.nombreEmpleado.nombre}".PadRight (columnaAncho) +
 			    $"{repuesto.Estado}");
                 tabla.AppendLine("Por que lo solicita: " +$"{repuesto.porQueLoSolicita}");
                 tabla.AppendLine("".PadRight(tablaAncho - 20, '_'));       

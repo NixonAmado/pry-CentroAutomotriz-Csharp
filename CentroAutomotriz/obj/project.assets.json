@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "/home/skylab-150/.nuget/packages/": {}
+    "C:\\Users\\paula\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/skylab-150/Documents/nixon/pry-CentroAutomotriz-Csharp/CentroAutomotriz/CentroAutomotriz.csproj",
+      "projectUniqueName": "c:\\Users\\paula\\Documents\\nixon\\avanceCentroAutomotriz\\pry-CentroAutomotriz-Csharp\\CentroAutomotriz\\CentroAutomotriz.csproj",
       "projectName": "CentroAutomotriz",
-      "projectPath": "/home/skylab-150/Documents/nixon/pry-CentroAutomotriz-Csharp/CentroAutomotriz/CentroAutomotriz.csproj",
-      "packagesPath": "/home/skylab-150/.nuget/packages/",
-      "outputPath": "/home/skylab-150/Documents/nixon/pry-CentroAutomotriz-Csharp/CentroAutomotriz/obj/",
+      "projectPath": "c:\\Users\\paula\\Documents\\nixon\\avanceCentroAutomotriz\\pry-CentroAutomotriz-Csharp\\CentroAutomotriz\\CentroAutomotriz.csproj",
+      "packagesPath": "C:\\Users\\paula\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\paula\\Documents\\nixon\\avanceCentroAutomotriz\\pry-CentroAutomotriz-Csharp\\CentroAutomotriz\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/skylab-150/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\paula\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.109/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
       }
     }
   }

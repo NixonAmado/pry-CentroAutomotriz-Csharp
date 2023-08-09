@@ -117,6 +117,8 @@ namespace MiProyecto
                                             case 2:
                                                 Empleado empleado = new Empleado();
                                                 Empleado empleadoSolicitante = empleado.buscarEmpleado(moviCentro.Empleados);
+                                                if(empleadoSolicitante == null){continue;}
+                                                
                                                 OrdenServicio ordenServicioRepuesto = new OrdenServicio();
                                                 OrdenServicio ordenServicioRepSeleccionado = ordenServicioRepuesto.buscarOrdenServicio(moviCentro.OrdenesServicio);
                                                 if (ordenServicioRepSeleccionado != null)
@@ -140,6 +142,8 @@ namespace MiProyecto
                                                     Console.WriteLine("No exite ninguna Orden de servicio, asegurate de haberla creado primero");
                                                     Console.ReadKey();
                                                 }
+                                                
+                                                
                                                 break;
                                             default:
                                             break;

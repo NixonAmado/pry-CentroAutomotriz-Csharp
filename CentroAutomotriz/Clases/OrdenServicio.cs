@@ -51,16 +51,20 @@ class OrdenServicio
             
             Cliente cliente = new Cliente();
             Cliente clienteSeleccionado = cliente.buscarCliente(moviCentro.Clientes);
-            
-            Vehiculo vehiculo = new Vehiculo();
-            Vehiculo vehiculoSeleccionado = vehiculo.buscarVehiculo(clienteSeleccionado.Vehiculos);
-            DateTime ordenServicioFr = DateTime.Today;
-            Console.WriteLine("********************************************************");   
+            if (clienteSeleccionado != null) 
+            {
+                 Vehiculo vehiculo = new Vehiculo();
+                Vehiculo vehiculoSeleccionado = vehiculo.buscarVehiculo(clienteSeleccionado.Vehiculos);
+                DateTime ordenServicioFr = DateTime.Today;
+                Console.WriteLine("********************************************************");   
 
-            OrdenServicio nuevaOrdenServicio = new OrdenServicio(ordenServicioNro,ordenServicioFr,clienteSeleccionado,vehiculoSeleccionado);
-            OrdenesServicio.Add(nuevaOrdenServicio);
-            Console.WriteLine("Se ha añadido con exito");
-            Console.ReadKey();
+                OrdenServicio nuevaOrdenServicio = new OrdenServicio(ordenServicioNro,ordenServicioFr,clienteSeleccionado,vehiculoSeleccionado);
+                OrdenesServicio.Add(nuevaOrdenServicio);
+                Console.WriteLine("Se ha añadido con exito");
+                Console.ReadKey();
+            }
+            
+           
 
         }        
     

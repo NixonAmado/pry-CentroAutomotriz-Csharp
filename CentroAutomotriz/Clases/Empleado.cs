@@ -75,10 +75,17 @@ namespace CentroAutomotriz.Clases;
 
             public Empleado buscarEmpleado(List<Empleado> Empleados)
         {
-            listarEmpleados(Empleados);
-            Console.WriteLine("\nIngrese la cedula del Empleado que va a hacer la solicitud: ");
-            string ccIngresada = Console.ReadLine();
-            return Empleados.Find(e => e.cc == ccIngresada );  
+            if(listarEmpleados(Empleados))
+            {
+                Console.WriteLine("\nIngrese la cedula del Empleado que va a hacer la solicitud: ");
+                string ccIngresada = Console.ReadLine();
+                return Empleados.Find(e => e.cc == ccIngresada );  
+            }
+            else{
+                Console.WriteLine("No exite ningun empleado,asegurate de haberlo creado primero");
+                Console.ReadKey();
+                return null;
+            }
         }
 
         public bool validarJefeCompras(List <Empleado> Empleados)

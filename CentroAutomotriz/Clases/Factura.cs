@@ -86,7 +86,7 @@ class Factura
             {
                 foreach (var repuesto in ordenAprobacion.DetalleAprobacion)
             {
-                if(repuesto.Estado != "desaprobar" || repuesto.Estado != "desaprobado")
+                if(repuesto.Estado.Length <= 8)
                     tabla.AppendLine (
 			        $"\t{repuesto.id}".PadRight (columnaAncho - 10) +
 			        $"{repuesto.nombreRepuesto}".PadRight (columnaAncho) +
@@ -97,28 +97,27 @@ class Factura
 			        $"{repuesto.Estado}");
 
                     subTotalRepuestos += repuesto.valorTotal;
-                    valorManoObraRepuestos += repuesto.valorTotal * 0.1; 
                 }
 	        }
             
             //TOTAL FACTURA
+            valorManoObraRepuestos = subTotalRepuestos * 0.1;
             tabla.AppendLine
             ("".PadRight(tablaAncho - 50) +
 			    $"SubTotal: " + $"{subTotalRepuestos}" 
 			    );
-                
+
+             tabla.AppendLine
+            ("".PadRight(tablaAncho - 50) +
+            $"Iva 19%: " + $"{subTotalRepuestos *= 1.19:F2}"
+            );
             tabla.AppendLine
             ("".PadRight(tablaAncho - 50) +
-			    $"Iva 19%: " + $"{subTotalRepuestos*= 1.19}" 
+			    $"Valor Mano Obra: " + $"{valorManoObraRepuestos:F2}" 
 			    );
-                
             tabla.AppendLine
             ("".PadRight(tablaAncho - 50) +
-			    $"Valor Mano Obra: " + $"{valorManoObraRepuestos}" 
-			    );
-            tabla.AppendLine
-            ("".PadRight(tablaAncho - 50) +
-			    $"Total A Pagar: " + $"{subTotalRepuestos + valorManoObraRepuestos}" 
+			    $"Total A Pagar: " + $"{subTotalRepuestos + valorManoObraRepuestos:F2}" 
 			);
 
                 
