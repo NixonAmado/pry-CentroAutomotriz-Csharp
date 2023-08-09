@@ -64,20 +64,30 @@ class Vehiculo
         
         
         }
-        public void listarVehiculos( List <Vehiculo> Vehiculos)
+        public bool listarVehiculos( List <Vehiculo> Vehiculos)
         {
-            Console.WriteLine("********************************************************");
-            Console.WriteLine("          Vehiculo/s Vinculado/s Al Cliente");
-            Console.WriteLine("********************************************************");
-
-            Console.WriteLine("\tPlaca\tModelo");
-            foreach (var vehiculo in Vehiculos)
+            if (Vehiculos.Count != 0)
             {
-                Console.WriteLine($"\t{vehiculo.Placa}\t{vehiculo.modelo}");
+                Console.Clear();
+                Console.WriteLine("********************************************************");
+                Console.WriteLine("          Vehiculo/s Vinculado/s Al Cliente");
+                Console.WriteLine("********************************************************");
+
+
+                Console.WriteLine("\tPlaca\tModelo");
+                foreach (var vehiculo in Vehiculos)
+                {
+                    Console.WriteLine($"\t{vehiculo.Placa}\t{vehiculo.modelo}");
+                }
+                return true;   
+            }
+            else
+            {
+                return false;
             }
         }
 
-           public Vehiculo buscarVehiculo(List <Vehiculo> Vehiculos)
+    public Vehiculo buscarVehiculo(List <Vehiculo> Vehiculos)
         {
             listarVehiculos(Vehiculos);
             Console.WriteLine("Ingrese la placa del vehiculo: ");            

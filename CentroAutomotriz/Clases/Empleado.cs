@@ -19,12 +19,12 @@ namespace CentroAutomotriz.Clases;
         {
             this.especialidad = "";
         }
-       public Empleado(string cc, string nombre, string apellido, string numeroCelular,string email, string especialidad, string diagnostico)
+        public Empleado(string cc, string nombre, string apellido, string numeroCelular,string email, string especialidad, string diagnostico)
             : base(cc, nombre, apellido, numeroCelular,diagnostico)
         {
             this.especialidad = especialidad;
         }
- public void RegistrarEmpleado(List<Empleado> Empleados )
+        public void RegistrarEmpleado(List<Empleado> Empleados )
         {    
             Console.Clear();    
             Console.WriteLine("********************************************************");
@@ -52,20 +52,31 @@ namespace CentroAutomotriz.Clases;
         }
 
         
-        public void listarEmpleados(List<Empleado> Empleados)
+        public bool listarEmpleados(List<Empleado> Empleados)
         {
-            Console.WriteLine("\n\tId\tNombre\tEspecialidad");
-            foreach (var empleado in Empleados)
+            if (Empleados.Count != 0)
             {
-                Console.WriteLine($"\t{empleado.cc}\t{empleado.nombre}\t{empleado.Especialidad}");
+                Console.Clear();
+                Console.WriteLine("********************************************************");
+                Console.WriteLine("                    Empleados");
+                Console.WriteLine("********************************************************");
+                Console.WriteLine("\n\tId\tNombre\tEspecialidad");
+                foreach (var empleado in Empleados)
+                {
+                    Console.WriteLine($"\t{empleado.cc}\t{empleado.nombre}\t{empleado.Especialidad}");
+                }   
+                    return true;
 
+            }else
+            {
+                return false;
             }
         }
 
             public Empleado buscarEmpleado(List<Empleado> Empleados)
         {
             listarEmpleados(Empleados);
-            Console.WriteLine("\ningrese la cedula del Empleado que va a hacer la solicitud: ");
+            Console.WriteLine("\nIngrese la cedula del Empleado que va a hacer la solicitud: ");
             string ccIngresada = Console.ReadLine();
             return Empleados.Find(e => e.cc == ccIngresada );  
         }

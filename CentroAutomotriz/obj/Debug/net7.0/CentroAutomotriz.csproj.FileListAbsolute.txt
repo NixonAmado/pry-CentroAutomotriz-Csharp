@@ -43,3 +43,18 @@ C:/Users/paula/Documents/nixon/CentroAutomotriz/obj/Debug/net7.0/ref/CentroAutom
 /home/arteN01-051/Documents/nixon/C# -NP/pry-CentroAutomotriz-Csharp/CentroAutomotriz/obj/Debug/net7.0/CentroAutomotriz.pdb
 /home/arteN01-051/Documents/nixon/C# -NP/pry-CentroAutomotriz-Csharp/CentroAutomotriz/obj/Debug/net7.0/CentroAutomotriz.genruntimeconfig.cache
 /home/arteN01-051/Documents/nixon/C# -NP/pry-CentroAutomotriz-Csharp/CentroAutomotriz/obj/Debug/net7.0/ref/CentroAutomotriz.dll
+/home/skylab-150/Documents/nixon/pry-CentroAutomotriz-Csharp/CentroAutomotriz/bin/Debug/net7.0/CentroAutomotriz
+/home/skylab-150/Documents/nixon/pry-CentroAutomotriz-Csharp/CentroAutomotriz/bin/Debug/net7.0/CentroAutomotriz.deps.json
+/home/skylab-150/Documents/nixon/pry-CentroAutomotriz-Csharp/CentroAutomotriz/bin/Debug/net7.0/CentroAutomotriz.runtimeconfig.json
+/home/skylab-150/Documents/nixon/pry-CentroAutomotriz-Csharp/CentroAutomotriz/bin/Debug/net7.0/CentroAutomotriz.dll
+/home/skylab-150/Documents/nixon/pry-CentroAutomotriz-Csharp/CentroAutomotriz/bin/Debug/net7.0/CentroAutomotriz.pdb
+/home/skylab-150/Documents/nixon/pry-CentroAutomotriz-Csharp/CentroAutomotriz/obj/Debug/net7.0/CentroAutomotriz.csproj.AssemblyReference.cache
+/home/skylab-150/Documents/nixon/pry-CentroAutomotriz-Csharp/CentroAutomotriz/obj/Debug/net7.0/CentroAutomotriz.GeneratedMSBuildEditorConfig.editorconfig
+/home/skylab-150/Documents/nixon/pry-CentroAutomotriz-Csharp/CentroAutomotriz/obj/Debug/net7.0/CentroAutomotriz.AssemblyInfoInputs.cache
+/home/skylab-150/Documents/nixon/pry-CentroAutomotriz-Csharp/CentroAutomotriz/obj/Debug/net7.0/CentroAutomotriz.AssemblyInfo.cs
+/home/skylab-150/Documents/nixon/pry-CentroAutomotriz-Csharp/CentroAutomotriz/obj/Debug/net7.0/CentroAutomotriz.csproj.CoreCompileInputs.cache
+/home/skylab-150/Documents/nixon/pry-CentroAutomotriz-Csharp/CentroAutomotriz/obj/Debug/net7.0/CentroAutomotriz.dll
+/home/skylab-150/Documents/nixon/pry-CentroAutomotriz-Csharp/CentroAutomotriz/obj/Debug/net7.0/refint/CentroAutomotriz.dll
+/home/skylab-150/Documents/nixon/pry-CentroAutomotriz-Csharp/CentroAutomotriz/obj/Debug/net7.0/CentroAutomotriz.pdb
+/home/skylab-150/Documents/nixon/pry-CentroAutomotriz-Csharp/CentroAutomotriz/obj/Debug/net7.0/CentroAutomotriz.genruntimeconfig.cache
+/home/skylab-150/Documents/nixon/pry-CentroAutomotriz-Csharp/CentroAutomotriz/obj/Debug/net7.0/ref/CentroAutomotriz.dll

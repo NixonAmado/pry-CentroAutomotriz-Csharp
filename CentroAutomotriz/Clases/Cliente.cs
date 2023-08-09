@@ -55,13 +55,23 @@ namespace CentroAutomotriz.Clases;
             Console.ReadKey();
         }
 
-        public void listarClientes(List<Cliente> Clientes)
+        public bool listarClientes(List<Cliente> Clientes)
         {
-            Console.WriteLine("\n\tId\t\tNombre");
-            foreach (var cliente in Clientes)
+            if(Clientes.Count != 0)
             {
-                Console.WriteLine($"\t{cliente.cc}\t\t{cliente.nombre}");
+                Console.Clear();
+                Console.WriteLine("********************************************************");
+                Console.WriteLine("                    clientes");
+                Console.WriteLine("********************************************************");
+                Console.WriteLine("\n\tId\t\tNombre");
+                foreach (var cliente in Clientes)
+                {
+                    Console.WriteLine($"\t{cliente.cc}\t\t{cliente.nombre}");
+                }
+                return true;
+
             }
+            else{return false;}
 
         }
         public Cliente buscarCliente(List<Cliente> Clientes)

@@ -79,6 +79,5 @@ class Repuesto
             Console.WriteLine("Se ha actualizado el estado del repuesto exitosamente");
             Console.ReadKey();
 
-      
         }
     }

@@ -10,14 +10,14 @@ class DiagnosticoExperto
         public string diagnosticoExperto {get;set;}
         public string ccEmpleado {get;set;}
         public string nombreEmpleado {get;set;}
-     
+
         public DiagnosticoExperto(string diagnosticoExperto, string ccEmpleado, string nombreEmpleado)
         {
             this.ccEmpleado = ccEmpleado;           
             this.nombreEmpleado = nombreEmpleado; 
             this.diagnosticoExperto = diagnosticoExperto;            
         }
-       public DiagnosticoExperto()
+        public DiagnosticoExperto()
         { 
             this.ccEmpleado = ccEmpleado;           
             this.diagnosticoExperto = diagnosticoExperto;            

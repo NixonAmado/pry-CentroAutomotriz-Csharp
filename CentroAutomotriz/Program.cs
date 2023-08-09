@@ -52,6 +52,7 @@ namespace MiProyecto
                                     else
                                     {
                                         Console.WriteLine("No existe ninguna orden de servicios, asegurate de haberla creado primero");
+                                        Console.ReadLine();
                                     }
                                     break;
                                 default:
@@ -77,7 +78,10 @@ namespace MiProyecto
                                     {
                                         DiagnosticoExperto diagnostico = new DiagnosticoExperto();
                                         Empleado empleadoDiagnostico = new Empleado();
-                                        empleadoDiagnostico.listarEmpleados(moviCentro.Empleados);
+                                        if(!empleadoDiagnostico.listarEmpleados(moviCentro.Empleados))
+                                        {Console.WriteLine("No existe ningun Empleado, asegurete de haber registrado por lo menos uno");
+                                        continue;
+                                        }
                                         diagnostico.AñadirDiagnostico(ordenServicioSeleccionado.DiagnosticosExperto);
                                     }
                                     else
@@ -144,8 +148,6 @@ namespace MiProyecto
                                     
                                     while (opMenuReparacion != 3);
                                     break;
-                               
-                                   
                                     
                                 case 3:
                                     Empleado jefeCompras = new Empleado();
@@ -203,7 +205,7 @@ namespace MiProyecto
                                             }
                                         }
                                         
-                                        if (ordenesReparacionPendientes.Count != 0)
+                                        if (ordenesReparacionPendientes.Count == 0)
                                         {
                                             Factura factura = new Factura();
                                             Factura facturaRegistrada = factura.RegistrarFactura(ordenServicioFacturaSeleccionado, moviCentro);

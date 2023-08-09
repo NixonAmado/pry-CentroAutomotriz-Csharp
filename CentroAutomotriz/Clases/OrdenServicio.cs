@@ -39,11 +39,10 @@ class OrdenServicio
             this.fechaOrden = fecha;               
             this.cliente = cliente;
             this.vehiculo = vehiculo;
-         }
+        }
 
         public void RegistrarOrdenServicio(List <OrdenServicio> OrdenesServicio, CentroAutoMotriz moviCentro)
         {
-            Console.Clear();
             Console.WriteLine("********************************************************");
             Console.WriteLine("             Registrar Orden Servicio");
             Console.WriteLine("********************************************************");   
@@ -52,6 +51,7 @@ class OrdenServicio
             
             Cliente cliente = new Cliente();
             Cliente clienteSeleccionado = cliente.buscarCliente(moviCentro.Clientes);
+            
             Vehiculo vehiculo = new Vehiculo();
             Vehiculo vehiculoSeleccionado = vehiculo.buscarVehiculo(clienteSeleccionado.Vehiculos);
             DateTime ordenServicioFr = DateTime.Today;
@@ -91,7 +91,7 @@ class OrdenServicio
             
             
             tabla.AppendLine
-             ("".PadRight(columnaAncho) +
+            ("".PadRight(columnaAncho) +
 			    $"Nro Orden".PadRight (columnaAncho) +
 			    "Fecha orden".PadRight (columnaAncho) +
 			    "\tId Cliente".PadRight (columnaAncho) +
@@ -109,7 +109,7 @@ class OrdenServicio
             tabla.AppendLine ("".PadRight ((tablaAncho/2) - 20) + "DATOS VEHICULO");
             tabla.AppendLine ("".PadRight (tablaAncho, '_'));
             tabla.AppendLine
-             ("".PadRight(columnaAncho) +
+            ("".PadRight(columnaAncho) +
 			    $"Nro Placa: {VehiculoVinculado.Placa}".PadRight(columnaAncho * 2) +
 			    $"Km: {VehiculoVinculado.km}".PadRight (columnaAncho)
 			);
@@ -171,9 +171,10 @@ class OrdenServicio
             
             if (ordenesServicio.Count != 0)
             {
-
-                Console.WriteLine(" \tnumero de orden servicio");
-                
+            Console.WriteLine("********************************************************");
+            Console.WriteLine("            numero de orden servicio");
+            Console.WriteLine("********************************************************");   
+            
                 foreach (var orden in ordenesServicio)
                 {
                     Console.WriteLine("\t\t" + orden.nroOrden);
@@ -192,11 +193,10 @@ class OrdenServicio
             if(listarParcialOrdenServicio(ordenesServicio))
             {
 
-                Console.Write("\tIngrese el numero de la orden de servicio: ");
+                Console.Write("\t\nIngrese el numero de la orden: ");
                 if(!int.TryParse(Console.ReadLine(), out int opcion))
                 {
                     Console.WriteLine("El valor ingresado es invalido");
-                    Console.WriteLine("<Press any key to continue>");
                     Console.ReadKey();
                 }
                 return ordenesServicio.Find(e => e.nroOrden == opcion ); 
@@ -205,7 +205,6 @@ class OrdenServicio
             else
             {
                 return null; 
-               
             }
             
     

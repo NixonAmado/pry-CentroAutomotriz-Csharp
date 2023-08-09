@@ -46,28 +46,28 @@ class Factura
     
         public void ListarFactura(OrdenServicio ordenServicio,CentroAutoMotriz moviCentro, Factura factura)
         {
-            const int columnaAncho = 20;
-            const int tablaAncho = 50 + (7 * columnaAncho);
+            const int columnaAncho = 15;
+            const int tablaAncho =  7 * columnaAncho;
             StringBuilder tabla = new StringBuilder ();
 
             Cliente clienteVinculado = ordenServicio.cliente;
             List<OrdenReparacion> ordenesReparacionVinculadas = ordenServicio.OrdenesReparacion;
             // Encabezado de la tabla
-            tabla.AppendLine ("".PadRight (tablaAncho, '_'));
-            tabla.AppendLine ("".PadRight ((tablaAncho/2) - 20) + "FACTURA");
+            tabla.AppendLine ("".PadRight (tablaAncho , '_'));
+            tabla.AppendLine ("".PadRight ((tablaAncho/2) - 20)  + "FACTURA");
             tabla.AppendLine ("".PadRight (tablaAncho, '_'));
             
-           tabla.AppendLine("".PadRight(columnaAncho) +
+            tabla.AppendLine("".PadRight(columnaAncho) +
 			    $"Nro orden: {ordenServicio.nroOrden}".PadRight(columnaAncho * 2) +
 			    $"Nro Factura: {factura.nroFactura}".PadRight (columnaAncho)
 			);
             // Detalles de la factura 
             // Encabezado de la tabla
-            tabla.AppendLine ("".PadRight(tablaAncho - 20, '_'));
-            tabla.AppendLine ("".PadRight((tablaAncho / 2) - 15) + "DETALLES DE APROBACION");
+            tabla.AppendLine ("".PadRight(tablaAncho, '_'));
+            tabla.AppendLine ("".PadRight((tablaAncho / 2) - 25) + "DETALLES DE APROBACION");
             tabla.AppendLine ("".PadRight(tablaAncho -20 , '_'));
             tabla.AppendLine
-             (
+            (
 			    "|  Id".PadRight(columnaAncho - 10) +
 			    "|  Nombre".PadRight(columnaAncho) +
 			    "|  ValorUnit".PadRight(columnaAncho) +
@@ -77,17 +77,17 @@ class Factura
 			    "|  Estado" 
                 
                 );
-                tabla.AppendLine("".PadRight(tablaAncho - 20, '_'));
+                tabla.AppendLine("".PadRight(tablaAncho, '_'));
             
             double subTotalRepuestos = 0; 
             double valorManoObraRepuestos = 0; 
             
             foreach (var ordenAprobacion in ordenesReparacionVinculadas)
             {
-               foreach (var repuesto in ordenAprobacion.DetalleAprobacion)
+                foreach (var repuesto in ordenAprobacion.DetalleAprobacion)
             {
                 if(repuesto.Estado != "desaprobar" || repuesto.Estado != "desaprobado")
-                     tabla.AppendLine (
+                    tabla.AppendLine (
 			        $"\t{repuesto.id}".PadRight (columnaAncho - 10) +
 			        $"{repuesto.nombreRepuesto}".PadRight (columnaAncho) +
 			        $"{repuesto.valorUnit}".PadRight (columnaAncho) +
@@ -103,30 +103,28 @@ class Factura
             
             //TOTAL FACTURA
             tabla.AppendLine
-             ("".PadRight(columnaAncho * 3) +
+            ("".PadRight(tablaAncho - 50) +
 			    $"SubTotal: " + $"{subTotalRepuestos}" 
 			    );
                 
             tabla.AppendLine
-             ("".PadRight(columnaAncho * 3) +
+            ("".PadRight(tablaAncho - 50) +
 			    $"Iva 19%: " + $"{subTotalRepuestos*= 1.19}" 
 			    );
                 
             tabla.AppendLine
-             ("".PadRight(columnaAncho * 3) +
+            ("".PadRight(tablaAncho - 50) +
 			    $"Valor Mano Obra: " + $"{valorManoObraRepuestos}" 
 			    );
-             tabla.AppendLine
-             ("".PadRight(columnaAncho * 3) +
+            tabla.AppendLine
+            ("".PadRight(tablaAncho - 50) +
 			    $"Total A Pagar: " + $"{subTotalRepuestos + valorManoObraRepuestos}" 
-			    );
-           
+			);
+
                 
                 
             Console.WriteLine(tabla.ToString ());
             Console.ReadKey();
 
-
-                
             }
     }
