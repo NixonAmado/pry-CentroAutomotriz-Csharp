@@ -1,2 +1,2 @@
 # pry-CentroAutomotriz-Csharp
-creacion de un sofware para la creacion y gestion de la administracion de un Centro Automotriz
+creación de una interfaz de consola para la gestión de un Centro Automotriz
